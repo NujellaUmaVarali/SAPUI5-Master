@@ -1,0 +1,51 @@
+<mvc:View controllerName="com.incture.cherrywork.ConferenceData.controller.Conf" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Table items="{conference>/confList}" headerText="Global Conferences"  >
+						<columns>
+							<Column>
+								<Text text="Conference Name"></Text>
+							</Column>
+							<Column>
+								<Text text="City"></Text>
+							</Column>
+							<Column>
+								<Text text="Date"></Text>
+							</Column>
+							<Column>
+								<Text text="Speakers"></Text>
+							</Column>
+							<Column>
+								<Text text="Participants"></Text>
+							</Column>
+							<Column>
+								<Text text="Delete?"></Text>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{conference>name}"/>
+									<Text text="{conference>city}"/>
+									<Text text="{conference>date}"/>
+									<Text text="{conference>speakers}"/>
+									<Text text="{conference>participants}"/>
+									<Button text="Delete" press="onDeleteHandle"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<HBox>
+						<Input value="{conference>/total/price}"/>
+						<Input value="{conference>/total/registered}"/>
+						<Button text="Calc" press="mul"/>
+						<Input value="{conference>/result}"/>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
